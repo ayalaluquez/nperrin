@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[[redirects]]
+  from = "http://nperrin-blog.netlify.com/*"
+  to = "https://blog.nperrin.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://nperrin-blog.netlify.com/*"
+  to = "https://blog.nperrin.io/:splat"
+  status = 301
+  force = true

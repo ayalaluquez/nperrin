@@ -1,0 +1,26 @@
+.container
+    height: 60px
+    display: flex
+    flex-direction: column
+    background-color: indigo
+    &::after
+        content: ""
+        position: relative
+        width: 100%
+        box-shadow: 0px -1px 7px 3px violet
+    > div
+        height: 100%
+        padding: 10px
+        flex-grow: 1
+        display: flex
+        justify-content: space-between
+        align-items: center
+    a
+        color: #fafafa
+        font-size: 32px
+        &:hover
+            color: #fafafa
+    button svg
+        width: 25px
+        height: 25px
+        color: #fafafa
