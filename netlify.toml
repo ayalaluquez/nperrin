@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[[redirects]]
+  from = "http://nperrin-meetup.netlify.com/*"
+  to = "https://meetup.nperrin.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://nperrin-meetup.netlify.com/*"
+  to = "https://meetup.nperrin.io/:splat"
+  status = 301
+  force = true

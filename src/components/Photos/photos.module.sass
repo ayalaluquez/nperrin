@@ -1,0 +1,37 @@
+.container
+    overflow-x: hidden
+
+.horizontalScroll
+    display: flex
+    transition: transform .5s
+    -webkit-transition: transform .5s
+    > a
+        max-height: 70vh
+        display: flex
+        > div
+            width: 100%
+            min-height: 200px
+            max-height: 500px
+            border: 5px solid #fafafa
+            img
+                object-fit: contain !important
+
+.buttons
+    padding: 10px 0
+    display: flex
+    justify-content: center
+    button
+        padding: 2px
+        transition: color .2s
+        -webkit-transition: color .2s
+        &:first-child
+            margin-right: 1em
+        svg
+            width: 30px
+            height: 30px
+            fill: #fafafa
+        &[disabled] svg
+            transition: color .2s
+            -webkit-transition: color .2s
+            fill: #eee
+            cursor: not-allowed
