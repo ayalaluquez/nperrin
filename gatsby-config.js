@@ -32,13 +32,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/resources/img`,
-        name: 'images',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         path: `${__dirname}/src/icons`,
         name: 'icons',
       },
@@ -83,7 +76,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './resources/img/favicon.png',
+        logo: './static/favicon.png',
 
         appName: null,
         appDescription: null,
