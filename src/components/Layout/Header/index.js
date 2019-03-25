@@ -1,17 +1,27 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import IconButton from '../../IconButton';
-import HamburgerIcon from '../../../icons/hamburger-solid.svg';
+import ExtLink from '../../ExtLink';
+import GithubIcon from '../../../icons/github-brands.svg';
+import BonsaiIcon from '../../../icons/bonsai.svg';
 import headerStyles from './header.module.sass';
 
-export default ({ onShowSideMenu, title }) => (
+export default ({ title, base, source }) => (
     <header className={headerStyles.container}>
         <div>
             <Link to="/">{title}</Link>
-            <IconButton onClick={onShowSideMenu} description="abrir menú">
-                <HamburgerIcon />
-            </IconButton>
+            <div className={headerStyles.links}>
+                <a href={base}>
+                    <span role="img" aria-label="root page">
+                        <BonsaiIcon />
+                    </span>
+                </a>
+                <ExtLink href={source}>
+                    <span role="img" aria-label="github source code">
+                        <GithubIcon />
+                    </span>
+                </ExtLink>
+            </div>
         </div>
     </header>
 );

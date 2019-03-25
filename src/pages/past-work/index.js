@@ -49,7 +49,7 @@ export default ({ data: { allMarkdownRemark: { edges: works } } }) => (
             <p>My responsibility in those projects, team dynamic, other fun stuff...</p>
             <p>I cannot mention all.</p>
             <p>Also, you might be interested in the PDF version of this.</p>
-            <p>So feel free to <ExtLink href={`https://nperrin.io/contact?subject=${subject}&message=${message}`}>contact me</ExtLink>.</p>
+            <p>So feel free to <a href={`https://nperrin.io/contact?subject=${subject}&message=${message}`}>contact me</a>.</p>
             <p>Thanks!</p>
         </div>
     </section>

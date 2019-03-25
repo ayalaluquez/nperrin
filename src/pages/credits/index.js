@@ -36,7 +36,7 @@ export default ({ data: { allFile: { edges: icons } } }) => {
                 <ul>
                     <li><ExtLink href="https://www.flaticon.com/free-icon/back-to-the-future_86503#term=back%20to%20future&page=1&position=1/">back to future</ExtLink></li>
                     <li><ExtLink href="https://www.flaticon.com/free-icon/horse_114789/">chess horse</ExtLink></li>
-                    <li><ExtLink href="https://www.flaticon.com/free-icon/bonsai_1471271#term=bonsai&page=1&position=2/">bonsai</ExtLink></li>
+                    <li><ExtLink href="https://www.flaticon.com/free-icon/bonsai_1471230#term=bonsai&page=1&position=3/">bonsai</ExtLink></li>
                 </ul>
             </div>
         </section>
