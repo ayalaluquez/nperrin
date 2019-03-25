@@ -35,7 +35,7 @@ export default ({ data: { allFile: { edges: icons } } }) => {
                 <h3>Flaticon Icons</h3>
                 <ul>
                     <li><ExtLink href="https://www.flaticon.com/free-icon/cup-of-hot-chocolate_15234#term=coffee&page=1&position=9/">coffee cup</ExtLink></li>
-                    <li><ExtLink href="https://www.flaticon.com/free-icon/bonsai_1471271#term=bonsai&page=1&position=2/">bonsai</ExtLink></li>
+                    <li><ExtLink href="https://www.flaticon.com/free-icon/bonsai_1471230#term=bonsai&page=1&position=3/">bonsai</ExtLink></li>
                     <li><ExtLink href="https://www.flaticon.com/free-icon/spain_197593#term=spain&page=1&position=1/">spain flag</ExtLink></li>
                     <li><ExtLink href="https://www.flaticon.com/free-icon/united-states-of-america_197484#term=united%20states&page=1&position=1/">usa flag</ExtLink></li>
                 </ul>
