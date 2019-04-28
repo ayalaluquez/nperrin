@@ -1,20 +1,32 @@
 {
-  "name": "nperrin-data",
-  "description": "data of @normanperrin",
-  "main": "index.js",
-  "scripts": {
-    "start": "echo hola"
-  },
-  "author": "normanperrin",
-  "dependencies": {
-    "express": "^4.16.4",
-    "express-graphql": "^0.8.0",
-    "graphql": "^14.2.1",
-    "rehype-document": "^3.0.0",
-    "rehype-format": "^2.3.1",
-    "rehype-stringify": "^5.0.0",
-    "remark-parse": "^6.0.3",
-    "remark-rehype": "^4.0.0",
-    "unified": "^7.1.0"
-  }
+    "name": "nperrin-data",
+    "description": "Norman server to query his data",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run pre-build && node index.js",
+        "pre-build": "rm -fr ./public && mkdir -p ./public && cp -r ./static/* ./public"
+    },
+    "author": "NormanPerrin",
+    "dependencies": {
+        "dictionary-en-gb": "^2.0.0",
+        "express": "^4.16.4",
+        "express-graphql": "^0.8.0",
+        "graphql": "^14.2.1",
+        "rehype-document": "^3.0.0",
+        "rehype-format": "^2.3.1",
+        "rehype-stringify": "^5.0.0",
+        "remark-parse": "^6.0.3",
+        "remark-rehype": "^4.0.0",
+        "remark-toc": "^5.1.1",
+        "retext-english": "^3.0.2",
+        "retext-indefinite-article": "^1.1.6",
+        "retext-simplify": "^4.1.2",
+        "retext-smartypants": "^3.0.2",
+        "retext-spell": "^2.4.0",
+        "retext-stringify": "^2.0.2",
+        "to-vfile": "^5.0.2",
+        "unified": "^7.1.0",
+        "unified-stream": "^1.0.4",
+        "vfile-reporter": "^5.1.1"
+    }
 }

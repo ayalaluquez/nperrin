@@ -1,34 +1,47 @@
 const fs = require('fs');
-const unified = require('unified');
-const markdown = require('remark-parse');
-const remark2rehype = require('remark-rehype');
-const doc = require('rehype-document');
 const format = require('rehype-format');
-const html = require('rehype-stringify')
+const html = require('rehype-stringify');
+const remark2rehype = require('remark-rehype');
+const stringify = require('retext-stringify');
 
-const processNode = (fileDir, createNode) => {
-    const fileContent = fs.readFileSync(fileDir, 'utf8');
-    unified()
-        .use(markdown)
-        .use(remark2rehype)
-        .use(doc)
-        .use(format)
-        .use(html)
-        .process(
-            fileContent,
-            (err, data) => createNode(fileDir, err, data.contents)
+const processHtml = (processor, fileContent, processFile) => processor
+    .use(remark2rehype)
+    .use(format, { indent: 4 })
+    .use(html)
+    .process(
+        fileContent,
+        (error, data) => processFile(
+            fileDir.replace('md', 'html'),
+            error,
+            data.contents
         )
-    ;
+    );
+
+const processRaw = (processor, fileContent, processFile) => processor
+    .use(stringify)
+    .process(
+        fileContent,
+        (error, data) => processFile(
+            fileDir.replace('md', 'txt'),
+            error,
+            data.contents
+        )
+    );
+
+const processMarkdownFile = (fileDir, processFile) => {
+    const fileContent = fs.readFileSync(fileDir, 'utf8');
+    processHtml(markdownProcessor, fileContent, processFile);
+    processRaw(markdownProcessor, fileContent, processFile);
 };
 
-const analyzeDir = (createNode) => (dir) => /\.md$/.test(dir)
-    ? processNode(dir, createNode)
-    : generateNodesByDir(dir, createNode)
-;
-
-const generateNodesByDir = (dir, createNode) => {
+const processMarkdownDirectory = (dir, processFile) => {
     const subDirs = fs.readdirSync(dir).map(subDir => `${dir}/${subDir}`);
-    subDirs.forEach(analyzeDir(createNode));
+    subDirs.forEach(subDir => {
+        if(/\.md$/.test(subDir)) {
+            return processMarkdownFile(subDir, processFile);
+        }
+        processMarkdownDirectory(subDir, processFile);
+    });
 };
 
 module.exports = generateNodesByDir;
