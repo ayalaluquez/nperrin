@@ -42,7 +42,7 @@ create_html_dir_list () {
 }
 
 create_html_from_directory () {
-    html_list="$(ls -rp "$1" |grep -v / |while read file; do create_html_file_list $file; done)"
+    html_list="$(ls -rp "$1" |grep -v / | grep -v 404 |while read file; do create_html_file_list $file; done)"
     dir_list="$(ls -rp "$1" |grep / |while read dir; do create_html_dir_list $dir; done)"
     cp directory.html "$1/index.html"
     append_content="$html_list$files_append_content$dir_list$final_append_content"
