@@ -1,8 +1,3 @@
----
-title: "Opinar: imprecisión"
-date: 2018-05-26
----
-
 # Opinar: imprecisión
 
 ![listorti](/img/writings/jose-maria.jpeg)

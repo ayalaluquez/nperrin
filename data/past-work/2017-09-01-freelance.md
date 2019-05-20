@@ -1,8 +1,3 @@
----
-title: Fullstack developer - Freelance
-date: 2017-09-01
----
-
 # Fullstack developer
 * Freelance
 * From: 2017-09-01

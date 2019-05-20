@@ -13,4 +13,4 @@ That's why I'm motivated to build nice, trustable, and simple systems for the en
 More important than fancy animations or bloated designs is that the system actually work and resolve some problem.
 
 # Further reading
-If you want to ask me something I have a [contact page](/contact?subject=Hey%20I%20want%20to%20ask%20you%20something) you can go to.
+If you want to ask me something I have a [contact page](/contact.html) you can go to.

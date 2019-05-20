@@ -1,8 +1,3 @@
----
-title: Teacher Collaborator - ComunidadIT
-date: 2018-07-10
----
-
 # Teacher Collaborator - Comunidad IT
 * Organization: [Comunidad IT](http://www.comunidadit.org)
 * From: 2018-07-10

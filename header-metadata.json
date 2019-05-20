@@ -1,0 +1,23 @@
+{
+    "title": "Norman Perrin",
+    "meta": [
+        { "name": "description", "content": "Information about Norman Perrin" },
+        { "name": "keywords", "content": "norman, perrin, sistemas, systems, information, programmer, developer, meetup, js, comunidadit, utn, argentina" },
+        { "name": "og:site_name", "content": "Norman Perrin" },
+        { "name": "og:title", "content": "Norman Perrin" },
+        { "name": "og:description", "content": "Information about Norman Perrin" },
+        { "name": "og:type", "content": "website" },
+        { "name": "og:image", "content": "/img/og-image.jpg" },
+        { "name": "og:image:type", "content": "image/jpg" },
+        { "name": "og:url", "content": "https://nperrin.io/" },
+        { "name": "twitter:card", "content": "summary" },
+        { "name": "twitter:title", "content": "Norman Perrin" },
+        { "name": "twitter:description", "content": "Information about Norman Perrin" },
+        { "name": "twitter:creator", "content": "@NormanPerrinOk" },
+        { "name": "twitter:image", "content": "/img/og-image.jpg" }
+    ],
+    "link": [
+        { "rel": "icon", "type": "image/png", "href": "/img/favicon.png" },
+        { "rel": "stylesheet", "href": "/styles.css" }
+    ]
+}

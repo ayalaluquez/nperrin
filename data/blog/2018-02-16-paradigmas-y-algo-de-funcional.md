@@ -1,13 +1,8 @@
----
-title: Paradigmas y algo de funcional
-date: 2018-02-16
----
-
 # Paradigmas y algo de funcional
 
 Al principio, cuando empecé a programar, estaba feliz con que mi programa funcione como esperaba, o pueda entender algo de lo que copiaba y pegaba. Todavía me acuerdo de los primeros programas que hice sacando código de algunos blogs que encontraba por internet. Quizás no entendía del todo lo que hacía ese choclo de código que tenía en mi .bat, pero estaba bastante satisfecho con el resultado.
 
-![window old terminal](/img/tech-blog/tech-blog/window-bash.jpeg)
+![window old terminal](/img/blog/paradigmas-y-algo-de-funcional/window-bash.jpeg)
 
 Mi situación actual es un poco diferente, al avanzar empecé a hacer programas más complejos y también trabajé con otras personas que tienen que entender lo que escribo. Por eso es que ahora no solo me importa que las cosas que hago funcionen, sino que se puedan entender y se puedan modificar fácilmente también.
 
@@ -27,7 +22,25 @@ Solo les voy a introducir rápidamente 3 palabras que van a ser muy frecuentes c
 
 Dejemos más claras estas definiciones analizando algo de código:
 
-`gist:NormanPerrin/658999c8c5b73c3301e64416d198a082`
+```javascript
+// ejemplo 1
+function doble(numero) {
+    return numero * 2;
+}
+
+function mapearDoble1(array) {
+    return array.map(doble);
+}
+
+// ejemplo 2
+function mapearDoble2(array) {
+    const respuesta = [];
+    for (let i = 0; i < array.length; i++) {
+        respuesta.push(array[i] * 2);
+    }
+    return respuesta;
+}
+```
 
 Empezando por la **expresividad**, como dijimos, es depende quién lo mire. O sea, si nunca vi un *map…* y la verdad que me va a resultar raro el ejemplo 1, en cambio si vengo del mundo imperativo donde el* for(let i…)* lo repito mientras duermo, va a ser más fácil de leer. Sabiendo las 2 formas, me parece más fácil de leer la primera, en el segundo ejemplo tengo que ver qué hace con el array. Aunque con el nombre puedo suponer que hace un recorrido el for, después tengo que ver de qué forma va incrementando, también para asegurarme de que funcione correctamente.
 
@@ -35,7 +48,9 @@ Analizando las **abstracciones** de cada uno, el primer ejemplo define una para 
 
 Finalmente podemos decir que el ejemplo 1 es más **declarativo** que el 2, al tener código basado más en definiciones que algoritmia. Esto se puede ver cuando se lee la firma de una función. Quizás se lee mejor que es una “definición” con una notación del estilo:
 
-`gist:NormanPerrin/42f2ab0e60ef9cc9dc0f83d481ebe96b`
+```javascript
+const doble = (numero) => numero * 2;
+```
 
 Esto se lee, doble es una función que recibe un número y devuelve el resultado de multiplicarlo por 2.
 
@@ -68,7 +83,56 @@ Aplicando bien este concepto obtenemos una función más:
 
 Veamos un ejemplo para entender mejor qué beneficios puede traer.
 
-`gist:NormanPerrin/738f80891240a4336abe0ff7ceb8fd9e`
+```javascript
+class Heladera {
+    constructor(comidas) { this.comidas = comidas }
+
+    verComida(nombre) {
+        return this.comidas.find(comida => comida.nombre == nombre);
+    }
+}
+
+class Comida {
+    constructor(nombre, saciedad) {
+        this.cantidad = 0;
+        this.nombre = nombre;
+        this.saciedad = saciedad;
+    }
+
+    serComido(persona) {
+        persona.comer(this);
+        this.cantidad = 0;
+    }
+
+    setCantidad(cantidad) { this.cantidad = cantidad; }
+    saciedad() { return this.cantidad * this.saciedad; }
+}
+
+class Persona {
+    constructor(nombre) {
+        this.nombre = nombre;
+        this.hambre = 100;
+    }
+    comer(comida) { this.hambre -= comida.saciedad }
+}
+
+// ejecución
+const unaHeladera = new Heladera([
+    new Comida('Choripan', 20),
+    new Comida('Empanada', 10),
+    new Comida('Milanesa', 30)
+]);
+
+const unaComida = unaHeladera.verComida('Milanesa');
+const unaPersona = new Persona('Pepe');
+
+unaComida.setCantidad(1);
+unaComida; // Comida {cantidad: 1, nombre: "Milanesa", saciedad: 30}
+unaPersona; // Persona {nombre: "Pepe", hambre: 100}
+unaComida.serComido(unaPersona);
+unaComida; // Comida {cantidad: 0, nombre: "Milanesa", saciedad: 30}
+unaPersona; // Persona {nombre: "Pepe", hambre: 70}
+```
 
 En este ejemplo podemos ver que no se está cumpliendo la transparencia referencial: *.serComido* genera cambios en *unaPersona* y en sí mismo, además como tiene estado interno **que puede cambiar**, su ejecución depende de cómo se encuentre en ese momento. Es importante remarcar que las funciones que modifican el estado de un objeto, hacen impredecible los valores de las siguientes ejecuciones si no se tuvieron en cuenta, o sea que el problema no es que tenga estado interno, sino que este pueda cambiar sin que nos demos cuenta.
 
@@ -80,7 +144,54 @@ Un buen comienzo es empezar a declarar cada entrada y salida de nuestras funcion
 
 Dejo que analicen tranquilos esta comparación.
 
-`gist:NormanPerrin/8c806ee4cf5351038a3bbb72f3e8e97a`
+```javascript
+function Heladera(comidas) {
+    return {
+        verComida: nombre => comidas.find(comida => comida.nombre() == nombre)
+    };
+}
+
+function Comida(nombre, saciedad, cantidad) {
+    return {
+        nombre: () => nombre,
+        serComido: persona => [
+            Comida(nombre, saciedad, 0),
+            persona.comer(saciedad * cantidad)
+        ]
+    };
+}
+
+function Persona(nombre, hambre) {
+    return {
+        hambre: () => hambre,
+        comer: saciedad => Persona(nombre, hambre - saciedad)
+    };
+}
+
+// ejecución
+const unaHeladera = Heladera([
+    Comida('Choripan', 20, 0),
+    Comida('Empanada', 10, 0),
+    Comida('Milanesa', 30, 1)
+]);
+
+const unaComida = unaHeladera.verComida('Milanesa');
+const unaPersona = Persona('Pepe', 100);
+
+// las entradas fueron declaradas cuando se ejecuto Comida(),
+// las mismas estan en el closure de las funciones nombre() y serComido(),
+// para cambiar esas variables hay que hacer una comida nueva, no puede ser sobre la misma.
+// aclarando, el estado actual es: { Milanesa, 30, 1 }
+unaComida; // {nombre: ƒ, serComido: ƒ}
+
+// lo mismo pasa con unaPersona
+// para aclarar el estado es: { Pepe, 100 }
+unaPersona; // {hambre: ƒ, comer: ƒ}
+
+unaComida.serComido(unaPersona); // [{…}, {…}]
+// ahora retorna como primer elemento una nueva comida con cantidad 0
+// como segundo elemento retorna la nueva persona con hambre 70
+```
 
 Para empezar, aclarar que usar class o function devolviendo un objeto no son muy diferentes, los 2 pueden tener estado interno, lo importante a tener en cuenta como restricción es no cambiar su estado interno del que fue creado.
 
@@ -91,7 +202,41 @@ Ahora tenemos mayor control sobre el estado de nuestros objetos, ya que no cambi
 
 Es una muy buena herramienta para reutilizar comportamiento. Ahora podemos generar mejores abstracciones ya que lo que antes teníamos en la misma función, la podemos separar, dejando en la definición de la función solo lo constante y pasando por parámetro lo variable.
 
-`gist:NormanPerrin/a16ee2bdd498daa8d0919f61a3bc0502`
+```javascript
+// ejemplo 1
+function esProgramador(persona) {
+    return persona.profesion == 'Programador';
+}
+
+function esMayorEdad(persona) {
+    return persona.edad >= 18;
+}
+
+function filtrarPersonas(personas, criterio) {
+    return personas.filter(criterio);
+}
+
+// ejemplo 2
+function filtrarProgramadores(personas) {
+    const personasFiltradas = [];
+    for (let i = 0; i < personas.length; i++) {
+        if (personas[i].profesion == 'Programador') {
+            personasFiltradas.push(personas[i]);
+        }
+    }
+    return personasFiltradas;
+}
+
+function filtrarMayores(personas) {
+    const personasFiltradas = [];
+    for (let i = 0; i < personas.length; i++) {
+        if (personas[i].edad >= 18) {
+            personasFiltradas.push(personas[i]);
+        }
+    }
+    return personasFiltradas;
+}
+```
 
 Si vemos en el **ejemplo 2**, lo único que cambia es el criterio de filtro entre las 2 funciones que se definen, seguimos escribiendo cómo recorrer el array cuando lo podríamos abstraer. Vemos cómo lo podemos hacer haciendo uso de la función *.filter* y pasándole como parámetro el criterio de filtro.
 

@@ -1,8 +1,3 @@
----
-title: Analyst Programmer - Snoop Consulting
-date: 2016-11-25
----
-
 # Analyst Programmer
 * Company: [Snoop Consulting](https://www.snoopconsulting.com)
 * From: 2016-11-25

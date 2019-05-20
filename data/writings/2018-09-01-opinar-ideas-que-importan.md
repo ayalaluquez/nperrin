@@ -1,8 +1,3 @@
----
-title: "Opinar: ideas que importan"
-date: 2018-09-01
----
-
 # Opinar: ideas que importan
 
 Si tenés alguna red social ya sabés que las ideas se crean, comparten, discuten, bardean, …, y que no necesariamente las mejores para alimentar el debate son las que trascienden. Porque no querés debatir, ni siquiera tener la razón, querés que te la den.

@@ -1,8 +1,3 @@
----
-title: Mi primer trabajo
-date: 2018-01-13
----
-
 # Mi primer trabajo
 
 Hace 1 año, más o menos, empecé a sentir la necesidad de formarme profesionalmente. No solo quería “poner en práctica lo aprendido” sino que ya estaba en una edad donde quería empezar a pagarme mis cosas. Otro gran plus que me motivó fue conocer personas muy interesantes que ya estaban trabajando y hablarme con ellos de lo que hacían.
@@ -51,4 +46,4 @@ Hoy en día trabajo como freelance, me sigo viendo con algunos amigos de la empr
 
 Todos estos aprendizajes no solo me ayudaron a trabajar mejor con otros, sino también conmigo.
 
-![After snoop consulting con Norman Perrin en el medio](/img/tech-blog/after-snoop.jpeg)*After office de empresa donde trabajé, ya había renunciado. (Soy el del medio).*
+![After snoop consulting con Norman Perrin en el medio](/img/blog/mi-primer-trabajo/after-snoop.jpeg)*After office de empresa donde trabajé, ya había renunciado. (Soy el del medio).*

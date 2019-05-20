@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  command = "./buid.sh"
+
+[[redirects]]
+  from = "http://nperrin.netlify.com/*"
+  to = "https://www.nperrin.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://nperrin.netlify.com/*"
+  to = "https://www.nperrin.io/:splat"
+  status = 301
+  force = true

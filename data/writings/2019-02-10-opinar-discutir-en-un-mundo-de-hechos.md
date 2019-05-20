@@ -1,8 +1,3 @@
----
-title: "Opinar: discutir en un mundo de hechos"
-date: 2019-02-10
----
-
 # Opinar: discutir en un mundo de hechos
 
 Es cierto, la realidad no está hecha de opiniones. Pero…

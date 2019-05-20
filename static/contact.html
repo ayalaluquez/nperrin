@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        form input,
+        form textarea {
+            font-size: 14px;
+            padding: 3px;
+            width: 250px;
+            border: 1px solid #222;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100px;
+            height: 30px;
+            font-size: 14px;
+            border: 1px solid #222;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Write free</h1>
+
+    <form method="POST" action="https://hooks.zapier.com/hooks/catch/4174773/vyy3ge/">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="message">Message</label>
+        <textarea name="message" id="message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</body>
+
+</html>
