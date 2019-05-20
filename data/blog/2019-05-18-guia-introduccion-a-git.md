@@ -20,6 +20,11 @@ Creando para que aprendan los conceptos básicos de **git** y **GitHub** así pu
         * [Confirmando el cambio](#confirmando-el-cambio)
         * [Usando la nube](#usando-la-nube)
     * [Repositorio ya creado](#repositorio-ya-creado)
+* [TLDR](#tldr)
+    * [Configurar git](#configurar-git)
+    * [Creando y clonando un repositorio](#creando-y-clonando-un-repositorio)
+    * [Trabajando localmente](#trabajando-localmente)
+    * [Trabajando en la nube](#trabajando-en-la-nube)
 * [Cierre](#cierre)
 
 ## Antes de empezar
@@ -190,10 +195,10 @@ También está bueno tener en cuenta que yo puedo agregar un archivo, modificarl
 
 Podemos agregar archivo por archivo... o usar un `*` para indicarle que queremos agregar todos los archivos.
 ```sh
-$ git add *
+$ git add -A
 ```
 
-**Pero momento!** Nos equivocamos y agregamos un archivo que no iba.
+**Pero momento!** Qué pasa si nos equivocamos y agregamos un archivo que no iba.
 
 A no preocuparse, *tenemos un comando para revertir el que les acabo de enseñar*:
 ```sh
@@ -224,7 +229,7 @@ Si queremos un mensaje más conciso le podemos agregar la opción `--oneline`.
 $ git log --oneline
 ```
 
-**Pero momento!** Nos equivocamos y commiteamos algo equivocado.
+**Pero momento!** Qué pasa si nos equivocamos y commiteamos algo equivocado.
 
 A no preocuparse, *tenemos unos comandos para arreglarlo*.
 
@@ -245,10 +250,25 @@ Difícil? Aunque no lo crean no mucha gente que usa git sabe de ese comando, per
 
 Ahora probemos de agregar otra página a la web y linkearla, o simplemente agregar un archivo nuevo y modificar el anterior que creamos.
 
+De paso les digo que si tienen una modificación que quieren revertir, y todavía no agregaron (con `add`). Pueden ver las diferencias con
+```sh
+$ git diff
+```
+
+y volver al estado anterior con
+```sh
+$ git checkout [nombre archivo]
+```
+
+o para revertir TODAS las modificaciones
+```sh
+git checkout .
+```
+
 Una vez que tenemos el cambio hecho, vamos a agregar los cambios y commitearlos como ya vimos.
 
 ```sh
-$ git add *
+$ git add -A
 ```
 
 ```sh
@@ -292,8 +312,6 @@ Cómo?
 $ git remote add origin https://github.com/[usuario]/[nombre de repositorio].git
 ```
 
-
-
 Esto va a declarar la variable `origin` con el valor de la url que le pasamos.
 
 Para ver a dónde quedó apuntando nuestro repositorio podemos hacer
@@ -301,7 +319,7 @@ Para ver a dónde quedó apuntando nuestro repositorio podemos hacer
 $ git remote show origin
 ```
 
-**Pero momento!** Nos volvimos a equivocar y pusimos la url mal.
+**Pero momento!** Qué pasa si nos volvimos a equivocar y pusimos la url mal.
 
 No hay problema, podemos pisar el valor de `origin` así
 ```sh
@@ -315,9 +333,14 @@ Nos debería decir que se hace `fetch` (traer cambios) y `push` (subir cambios) 
 $ git push origin master
 ```
 
+Y si alguien subió cambios, podemos traer cambios con
+```sh
+$ git pull origin master
+```
+
 Si ahora nos fijamos en el repositorio remoto, ya tenemos nuestros cambios subidos, el repositorio no está vacío, sino que tiene nuestro código!
 
-**Pero momento!** Nos equivocamos (otra vez...) y subimos algo que no iba.
+**Pero momento!** Qué pasa si nos equivocamos (otra vez...) y subimos algo que no iba.
 
 No se preocupen, *tenemos un comando para arreglarlo*.
 
@@ -370,8 +393,52 @@ Y ya está, si entramos a la carpeta del repositorio y nos fijamos con `git remo
 
 Así que de acá en adelante pueden seguir los pasos de [viendo el estado](#viendo-el-estado).
 
+## TLDR
+
+### Configurar git
+
+| Comando | Descripción |
+| ------- | ----------- |
+| `git config --global user.name "[usuario github]"` | Configurar nombre usuario |
+| `git config --global user.email "[email github]"` | Configurar email usuario |
+| `git config --global core.editor "code"` | Configurar editor por defecto |
+
+### Creando y clonando un repositorio
+
+| Comando | Descripción |
+| ------- | ----------- |
+| `git init` | Inicializa un repositorio git |
+| `git clone https://github.com/[usuario]/[nombre del repositorio].git` | Crea una copia local del repositorio remoto |
+
+### Trabajando localmente
+
+| Comando | Descripción |
+| ------- | ----------- |
+| `git status` | Ver estado repositorio |
+| `git checkout [nombre archivo]` | Revertir modificación |
+| `git diff` | Ver diferencia actual versión y modificación |
+| `git add [nombre archivo]` | Agregar un cambio |
+| `git reset [nombre archivo]` | Revertir un cambio |
+| `git commit -m "[mensaje]"` | Agregar un commit |
+| `git commit --amend` | Pisar un commit |
+| `git log` | Ver historial commits |
+| `git reset HEAD~1` | Sacar último cambio de estado commiteado, a modificado |
+| `git revert [hash]` | Revertir un commit |
+
+### Trabajando en la nube
+| Comando | Descripción |
+| ------- | ----------- |
+| `git remote show origin` | Ver valor de variable origin |
+| `git remote add origin [https://github.com/[usuario]/[nombre del repositorio].git]` | Agregar variabl origin |
+| `git remote set-url origin [https://github.com/[usuario]/[nombre del repositorio].git]` | Pisar variable origin |
+| `git remote show origin` | Ver a dónde sube y de dónde trae cambios el repositorio |
+| `git push origin master` | Subir commit al repositorio remoto |
+| `git pull origin master` | Traer cambios del repositorio remoto |
+
 ## Cierre
 Fue un viaje largo.
+
+Quedan algunos temas que ver como branches, resolución de conflictos y flujo de trabajo con GitHub, pero creo que por hoy es suficiente.
 
 Solo comentar que, afortunadamente, **git** es una herramienta muy popular, y como esta guía, hay muchas más que explica cómo usarlo, juegos interactivos, cheatsheets, y es fácil conseguir ayuda si tenemos un problema.
 
@@ -381,4 +448,4 @@ Por último les dejo algunos recursos:
 * [Un montón de recursos en 1 página](https://try.github.io/).
 * [Ejercicios de Free Code Camp](https://guide.freecodecamp.org/git/).
 * [Charla introductoria a git](https://youtu.be/4fbzjJH5LIQ/).
-* [Repositorio con este doc](https://github.com/normanperrin/introduccion-a-github/).
+* [Repositorio con este doc](https://github.com/NormanPerrin/nperrin/blob/master/data/blog/2019-05-18-guia-introduccion-a-git.md).
