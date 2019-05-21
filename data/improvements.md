@@ -1,8 +1,20 @@
 # Improvements
-* Addd project planning doc.
-* RSS feed
+
+## Add
+* Project planning doc.
+* RSS feed.
+* GraphQL client.
+
+## Better
 * Deploy on own server.
 * Replace contact endpoint.
-* Hierarchy header
-* GraphQL client
-* Better [ugly build script](https://github.com/NormanPerrin/nperrin/blob/master/buid.sh)
+* [Ugly build script](https://github.com/NormanPerrin/nperrin/blob/master/buid.sh).
+* Use vfile to see progress on markdown processing.
+* Preview depending on document.
+
+## Investigate
+* blogroll.
+* webmentions.
+* microformats.
+* webring.
+* h-card.

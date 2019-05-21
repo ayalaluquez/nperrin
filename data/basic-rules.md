@@ -1,7 +1,7 @@
-# Norman's basic rules
+# Normans basic rules
 This section is not meant to stay fixed. I'll try and change some things.
 
-Am I following this rules now? Nope, but wanted to write them down. Will make a tracker on this site for this.
+Am I following this rules now? Nope, but want to start religiously on June. Will track my habits [here](/habits).
 
 ## Index
 * [Habits](#habits)
