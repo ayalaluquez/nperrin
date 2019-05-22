@@ -1,7 +1,6 @@
 # Improvements
 
 ## Add
-* Project planning doc.
 * RSS feed.
 * GraphQL client.
 
