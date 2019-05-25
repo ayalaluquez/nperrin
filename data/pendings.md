@@ -3,10 +3,11 @@
 If something is not specific or clear, it means I have to think more about that subject, but still a to-do I want to accomplish.
 
 ## Programming
-* Better https://nperrin.io site.
 * Make program to form words from an input of text.
-* Make more programming projects.
+* Make program to save like pocket read later sites, with puppeteer.
 * Make program to track hours from an excel and send them to my boss.
+* Make program to convert md to html. Just that. In a low level language.  
+* Better https://nperrin.io site.
 
 ## Educational
 * Make short videos of web development and related tools.
