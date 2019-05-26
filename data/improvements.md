@@ -8,7 +8,7 @@
 * Deploy on own server.
 * Replace contact endpoint.
 * [Ugly build script](https://github.com/NormanPerrin/nperrin/blob/master/buid.sh).
-* Use vfile to see progress on markdown processing.
+* Use vfile to see progress on markdown processing for development.
 * Preview depending on document.
 
 ## Investigate
@@ -17,3 +17,4 @@
 * microformats.
 * webring.
 * h-card.
+

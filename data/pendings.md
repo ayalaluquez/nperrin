@@ -14,12 +14,13 @@ If something is not specific or clear, it means I have to think more about that 
 * Prepare talks and workshops.
 
 ## Learning
-* Learn VIM (is like a lot to say "learn", but yes).
 * Learn more about Unix and related programs.
-* Learn a low level language (like C, Rustm, ...).
+* Learn a low level language (like C, Rust, ...).
 * Find out an activity I like that doesn't relates with my job.
 
 ## Life
 * Move alone by 2019.
 * Travel to Europe by 2020 [June - August].
 
+## Done
+* ~Learn VIM (is like a lot to say "learn", but yes)~.
