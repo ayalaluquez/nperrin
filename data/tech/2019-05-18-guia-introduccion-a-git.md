@@ -61,7 +61,7 @@ Había varios problemas con esta forma de trabajar.
 * El resultado final no era coherente entre partes.
 * No hablemos de versionado...
 
-![old version control](/img/blog/guia-introduccion-a-git/old-version-control.png)
+![old version control](/img/tech/guia-introduccion-a-git/old-version-control.png)
 
 Luego llegó Google Drive.
 
@@ -69,7 +69,7 @@ Eso nos resolvió todo para hacer TPs, incluso si alguien la pifiaba y borraba a
 
 Lo cual es genial.
 
-![google drive version control](/img/blog/guia-introduccion-a-git/google-drive-version-control.png)
+![google drive version control](/img/tech/guia-introduccion-a-git/google-drive-version-control.png)
 
 Pero trabajar un documento es distinto a un programa con muchos archivos, sub carpetas, etc.
 
@@ -92,7 +92,7 @@ Habiendo hecho la comparación podemos entender a lo que se refiere con "control
 
 La parte de ***distribuido*** necesita un poco más de explicación que lo anterior.
 
-![github flow](/img/blog/guia-introduccion-a-git/github-flow.png)
+![github flow](/img/tech/guia-introduccion-a-git/github-flow.png)
 
 Vamos a explicar las partes
 
@@ -185,7 +185,7 @@ $ git add [nombre_archivo]
 
 Ahora, es importante entender que podemos tener un cambio en 3 estados, uno cuando está ***modificado*** y sin agregar, otro ***agregado*** y por último ***"commiteado"***.
 
-![estados de un cambio](/img/blog/guia-introduccion-a-git/estados.png)
+![estados de un cambio](/img/tech/guia-introduccion-a-git/estados.png)
 
 El estado commiteado lo vamos a ver después, pero sería como asegurar el cambio que agregamos, sumándole un mensaje.
 
@@ -292,7 +292,7 @@ Todo lo venimos manejando localmente, en nuestra compu, lo cual puede ser algo a
 1. Ir a [GitHub](https://github.com/).
 2. A la derecha arriba van a tener un botón que les va a expandir un menú, y les va a decir de crear un repositorio.
 
-![new repository](/img/blog/guia-introduccion-a-git/new-repository.png)
+![new repository](/img/tech/guia-introduccion-a-git/new-repository.png)
 
 3. Darle un nombre al repositorio y dejar las otras opciones como están.
 4. Felicitaciones! Ahora tienen un repositorio en internet... pero está vacío 👀
@@ -448,4 +448,4 @@ Por último les dejo algunos recursos:
 * [Un montón de recursos en 1 página](https://try.github.io/).
 * [Ejercicios de Free Code Camp](https://guide.freecodecamp.org/git/).
 * [Charla introductoria a git](https://youtu.be/4fbzjJH5LIQ/).
-* [Repositorio con este doc](https://github.com/NormanPerrin/nperrin/blob/master/data/blog/2019-05-18-guia-introduccion-a-git.md).
+* [Repositorio con este doc](https://github.com/NormanPerrin/nperrin/blob/master/data/tech/2019-05-18-guia-introduccion-a-git.md).

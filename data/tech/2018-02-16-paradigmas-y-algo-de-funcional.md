@@ -2,7 +2,7 @@
 
 Al principio, cuando empecé a programar, estaba feliz con que mi programa funcione como esperaba, o pueda entender algo de lo que copiaba y pegaba. Todavía me acuerdo de los primeros programas que hice sacando código de algunos blogs que encontraba por internet. Quizás no entendía del todo lo que hacía ese choclo de código que tenía en mi .bat, pero estaba bastante satisfecho con el resultado.
 
-![window old terminal](/img/blog/paradigmas-y-algo-de-funcional/window-bash.jpeg)
+![window old terminal](/img/tech/paradigmas-y-algo-de-funcional/window-bash.jpeg)
 
 Mi situación actual es un poco diferente, al avanzar empecé a hacer programas más complejos y también trabajé con otras personas que tienen que entender lo que escribo. Por eso es que ahora no solo me importa que las cosas que hago funcionen, sino que se puedan entender y se puedan modificar fácilmente también.
 
