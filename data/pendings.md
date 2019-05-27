@@ -13,10 +13,12 @@ If something is not specific or clear, it means I have to think more about that 
 ## Educational
 
 * Make short videos of web development and related tools.
+* Make GraphQL wrapper for REST video, repo and server.
 * Prepare talks and workshops.
 
 ## Learning
 
+* Makefiles.
 * Learn more about Unix and related programs.
 * Learn a low level language (like C, Rust, ...).
 * Find out an activity I like that doesn't relates with my job.
