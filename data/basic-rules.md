@@ -1,7 +1,9 @@
 # Normans basic rules
 This section is not meant to stay fixed. I'll try and change some things.
 
-Am I following this rules now? Nope, but want to start religiously on June. Will track my habits [here](/habits).
+Also some exceptions will be made for extraordinary events.
+
+Am I following this rules now? Nope, but want to start on June. Will track my habits [here](/habits).
 
 ## Index
 * [Habits](#habits)
@@ -22,6 +24,7 @@ Am I following this rules now? Nope, but want to start religiously on June. Will
 * No more than 2 meals per day.
 * No more than 2 coffees per day.
 * No coffee after 18hs.
+* No coffee or tea before 1hr after having a meal.
 * No chamomile tea before 18hs.
 * No chocolate at night.
 
