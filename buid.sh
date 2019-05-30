@@ -15,7 +15,7 @@ final_append_content='
 '
 
 # pre build
-rm -fr ./public && mkdir -p ./public && cp -r ./static/* ./public
+rm -fr ./public/* && cp -r ./static/* ./public
 
 # markdown to html
 build_from_path () {
